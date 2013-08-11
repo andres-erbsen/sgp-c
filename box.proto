@@ -1,0 +1,6 @@
+message Box {
+	required int32 enc_algo = 1;
+	required bytes sender = 2;
+	required bytes data = 3;
+}
+

@@ -1,0 +1,13 @@
+message PublicKeyData {
+	repeated uint32 sig_algos = 1;
+	repeated uint32 enc_algos = 2;
+	repeated bytes sig_keys  = 3;
+	repeated bytes enc_keys  = 4;
+	optional int64 time = 5; // unix "epoch" format
+}
+
+message PublicKey {
+	required bytes publickey_msg = 1;
+	repeated bytes sigs = 2;
+}
+
