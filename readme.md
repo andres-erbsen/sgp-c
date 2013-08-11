@@ -1,5 +1,6 @@
 # Dependencies
 
+	sudo pacman -S protobuf libsodium
 	wget https://raw.github.com/maandree/sha3sum/master/c/sha3.h
 	wget https://raw.github.com/maandree/sha3sum/master/c/sha3.c
 	wget http://nanopb.googlecode.com/files/nanopb-0.2.1.tar.gz
