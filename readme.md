@@ -24,8 +24,7 @@
 	./sgp-fingerprint -h < pk1
 	./sgp-keygen 1>pk2 2>sk2
 	./sgp-fingerprint -h < pk2
-	echo kala | ./sgp-seal pk2 pk1 sk1 | ./sgp-open sk2 2>/dev/null # => "kala\n"
-	echo kala | ./sgp-seal pk2 pk1 sk1 | ./sgp-open sk2 2>&1 >/dev/null | ./sgp-fingerprint -h
+	echo kala | ./sgp-seal pk2 pk1 sk1 | ./sgp-open sk2 2> >(./sgp-fingerprint -h)
 
 # License
 
