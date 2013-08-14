@@ -9,12 +9,12 @@
 
 int main(int argc, char** argv) {
     if (argc != 4) {
-        fprintf(stderr, "%s their_pk our_pk our_sk", argv[0]);
+        fprintf(stderr, "% our_sk our_pk their_pk ", argv[0]);
         return 2;
     }
     uint8_t* encpk;
     {
-        FILE* f = fopen(argv[1], "r");
+        FILE* f = fopen(argv[3], "r");
         if (f == NULL) {fprintf(stderr, "Cannot open their public key file"); return 1;}
         uint8_t buffer[256];
         int len = fread(buffer, 1, sizeof(buffer), f);
@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
 
     unsigned char sk[crypto_box_SECRETKEYBYTES];
     {
-        FILE* f = fopen(argv[3], "r");
+        FILE* f = fopen(argv[1], "r");
         if (f == NULL) {fprintf(stderr, "Cannot open our secret key file"); return 1;}
         int len = fread(sk, 1, crypto_box_SECRETKEYBYTES, f);
         fclose(f);
